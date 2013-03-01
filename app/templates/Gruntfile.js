@@ -47,6 +47,13 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+
+    watch: {
+      dist: {
+        files: '<%%= yeoman.app %>/{,*/}*.js',
+        tasks: ['uglify', 'concat']
+      }
     }
   });
 
@@ -54,6 +61,11 @@ module.exports = function (grunt) {
     'clean',
     'uglify',
     'concat'
+  ]);
+
+  // Create an alias familiar to those using webapp/angular.
+  grunt.registerTask('server', [
+    'watch'
   ]);
 
   grunt.registerTask('default', [
