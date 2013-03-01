@@ -24,6 +24,7 @@ describe('Bookmarklet generator', function () {
       ['package.json', /"name": "temp"/],
       '.gitignore',
       '.gitattributes',
+      '.jshintrc',
       'Gruntfile.js',
       'app/main.js'
     ];

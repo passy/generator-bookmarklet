@@ -14,7 +14,7 @@ function BookmarkletGenerator() {
 
   this.on('end', function () {
     console.log('\nI\'m all done. Just run ' +
-                'npm install && bower install'.bold.yellow +
+                'npm install'.bold.yellow +
                 ' to install the required dependencies.');
   });
 };
@@ -27,6 +27,10 @@ BookmarkletGenerator.prototype.gruntfile = function gruntfile() {
 
 BookmarkletGenerator.prototype.packagejson = function packagejson() {
   this.template('_package.json', 'package.json');
+};
+
+BookmarkletGenerator.prototype.jshintrc = function jshintrc() {
+  this.template('jshintrc', '.jshintrc');
 };
 
 BookmarkletGenerator.prototype.gitfiles = function gitfiles() {
