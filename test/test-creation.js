@@ -22,6 +22,8 @@ describe('Bookmarklet generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       ['package.json', /"name": "temp"/],
+      '.gitignore',
+      '.gitattributes',
       'Gruntfile.js',
       'app/main.js'
     ];
