@@ -4,7 +4,7 @@ var path = require('path');
 var util = require('util');
 var yeoman = require('yeoman-generator');
 
-function BookmarkletGenerator() {
+function BookmarkletGenerator(args, options) {
   yeoman.generators.Base.apply(this, arguments);
 
   this.mainFile = this.readFileAsString(path.join(this.sourceRoot(),
@@ -13,11 +13,11 @@ function BookmarkletGenerator() {
                                                         '../package.json')));
 
   this.on('end', function () {
-    console.log('\nI\'m all done. Just run ' +
-                'npm install'.bold.yellow +
-                ' to install the required dependencies.');
+    if (!options['skip-install']) {
+      this.npmInstall();
+    }
   });
-};
+}
 
 util.inherits(BookmarkletGenerator, yeoman.generators.NamedBase);
 

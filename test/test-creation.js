@@ -15,6 +15,7 @@ describe('Bookmarklet generator', function () {
       this.webapp = helpers.createGenerator('bookmarklet:app', [
         '../../app'
       ]);
+      this.webapp.options['skip-install'] = true;
       done();
     }.bind(this));
   });
