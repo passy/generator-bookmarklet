@@ -19,7 +19,7 @@ function BookmarkletGenerator(args, options) {
   });
 }
 
-util.inherits(BookmarkletGenerator, yeoman.generators.NamedBase);
+util.inherits(BookmarkletGenerator, yeoman.generators.Base);
 
 BookmarkletGenerator.prototype.gruntfile = function gruntfile() {
   this.template('Gruntfile.js');
