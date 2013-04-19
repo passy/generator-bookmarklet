@@ -1,7 +1,7 @@
 {
   "name": "generator-bookmarklet",
   "version": "0.1.0",
-  "description": "Bookmarklet Generator for Yeoman",
+  "description": "Yeoman Generator for bookmarklets",
   "keywords": [
     "yeoman-generator",
     "bookmarklet"
@@ -19,13 +19,13 @@
     "url": "https://github.com/passy/generator-bookmarklet.git"
   },
   "scripts": {
-    "test": "mocha test/test-*.js"
+    "test": "mocha --reporter spec"
   },
   "dependencies": {
     "yeoman-generator": "~0.10.2"
   },
   "devDependencies": {
-    "mocha": "~1.8.1"
+    "mocha": "~1.9.0"
   },
   "engines": {
     "node": ">=0.8.0"
