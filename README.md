@@ -10,6 +10,12 @@ Scaffolds out a project to create
 - Install the generator: `npm install -g generator-bookmarklet`
 - Run: `yo bookmarklet`
 
+## Changelog
+
+### 0.1.1 (2013-05-01)
+
+- Automatically install npm dependencies unless started with `--skip-install`.
+
 ## License
 [MIT License](http://en.wikipedia.org/wiki/MIT_License) |
 (c) [Pascal Hartig](https://twitter.com/passy)
