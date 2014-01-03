@@ -3,22 +3,22 @@
 'use strict';
 
 var buffer = require('buffer');
-var clean = require('gulp-clean');
-var concat = require('gulp-concat');
 var gulp = require('gulp');
-var jshint = require('gulp-jshint');
+var gulpClean = require('gulp-clean');
+var gulpConcat = require('gulp-concat');
+var gulpJshint = require('gulp-jshint');
+var gulpUglify = require('gulp-uglify');
+var jshintStylish = require('jshint-stylish');
 var map = require('map-stream');
-var uglify = require('gulp-uglify');
-
 
 gulp.task('scripts', function () {
-  var header = new Buffer('// Copy this to your URL bar:\njavascript:', 'utf-8');
+  var header = new Buffer('// Copy this to your URL bar:\njavascript:');
 
   gulp.src('app/{,*/}*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(uglify())
-    .pipe(concat('bookmarklet.js'))
+    .pipe(gulpJshint())
+    .pipe(gulpJshint.reporter(jshintStylish))
+    .pipe(gulpUglify())
+    .pipe(gulpConcat('bookmarklet.js'))
     .pipe(map(function (file, cb) {
       file.contents = buffer.Buffer.concat([header, file.contents]);
       cb(null, file);
@@ -27,7 +27,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('clean', function () {
-  gulp.src('dist').pipe(clean());
+  gulp.src('dist').pipe(gulpClean());
 });
 
 gulp.task('default', function () {
