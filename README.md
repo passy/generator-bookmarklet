@@ -10,7 +10,15 @@ Scaffolds out a project to create
 - Install the generator: `npm install -g generator-bookmarklet`
 - Run: `yo bookmarklet`
 
+Now add or edit your files in `app/` and run `gulp` to generate your
+bookmarklet. You can also use `gulp watch` to continuously watch for changes.
+You can find the resulting bookmarklet in `dist/bookmarklet.js`.
+
 ## Changelog
+
+### 0.2.0 (2014-01-03)
+
+- Replaced grunt with gulp.
 
 ### 0.1.1 (2013-05-01)
 

@@ -21,8 +21,8 @@ function BookmarkletGenerator(args, options) {
 
 util.inherits(BookmarkletGenerator, yeoman.generators.Base);
 
-BookmarkletGenerator.prototype.gruntfile = function gruntfile() {
-  this.template('Gruntfile.js');
+BookmarkletGenerator.prototype.buildfile = function buildfile() {
+  this.template('gulpfile.js');
 };
 
 BookmarkletGenerator.prototype.packagejson = function packagejson() {
