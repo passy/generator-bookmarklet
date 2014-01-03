@@ -1,6 +1,6 @@
 {
   "name": "generator-bookmarklet",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Yeoman Generator for bookmarklets",
   "keywords": [
     "yeoman-generator",
