@@ -26,7 +26,7 @@ describe('Bookmarklet generator', function () {
       '.gitignore',
       '.gitattributes',
       '.jshintrc',
-      'Gruntfile.js',
+      'gulpfile.js',
       'app/main.js'
     ];
 
