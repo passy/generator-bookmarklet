@@ -16,7 +16,7 @@ You can find the resulting bookmarklet in `dist/bookmarklet.js`.
 
 ## Changelog
 
-#### 0.2.2 (2014-10-04)
+#### 0.2.2 (2014-10-XX)
 
 - Update to Gulp Version 3.8
 - Removed [`gulp.run`](https://github.com/gulpjs/gulp/issues/199)
