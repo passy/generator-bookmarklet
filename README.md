@@ -16,6 +16,12 @@ You can find the resulting bookmarklet in `dist/bookmarklet.js`.
 
 ## Changelog
 
+#### 0.2.2 (2014-10-04)
+
+- Update to Gulp Version 3.8
+- Removed [`gulp.run`](https://github.com/gulpjs/gulp/issues/199)
+- Replaces [gulp-clean](https://github.com/peter-vilja/gulp-clean) with [gulp-rimraf](https://github.com/robrich/gulp-rimraf)
+
 ### 0.2.0 (2014-01-03)
 
 - Replaced grunt with gulp.
