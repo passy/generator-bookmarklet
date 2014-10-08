@@ -32,5 +32,5 @@ gulp.task('clean', function(cb) {
 gulp.task('default', ['clean', 'scripts']);
 
 gulp.task('watch', function() {
-  gulp.watch('app/{,*/}*.js', 'scripts');
+  gulp.watch('app/{,*/}*.js', ['scripts']);
 });
