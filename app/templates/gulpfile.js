@@ -2,8 +2,8 @@
 'use strict';
 
 var buffer = require('buffer');
+var del = require('del');
 var gulp = require('gulp');
-var rimraf = require('gulp-rimraf');
 var gulpConcat = require('gulp-concat');
 var gulpJshint = require('gulp-jshint');
 var gulpUglify = require('gulp-uglify');
@@ -22,15 +22,15 @@ gulp.task('scripts', function() {
       file.contents = buffer.Buffer.concat([header, file.contents]);
       cb(null, file);
     }))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean', function() {
-  gulp.src('dist').pipe(rimraf());
+gulp.task('clean', function(cb) {
+  del('dist', cb);
 });
 
 gulp.task('default', ['clean', 'scripts']);
 
 gulp.task('watch', function() {
-  gulp.watch('app/{,*/}*.js', ['scripts']);
+  gulp.watch('app/{,*/}*.js', 'scripts');
 });
