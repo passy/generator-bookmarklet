@@ -25,9 +25,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean', function(cb) {
-  del('dist', cb);
-});
+gulp.task('clean', del.bind(null, 'dist'));
 
 gulp.task('default', ['clean', 'scripts']);
 
