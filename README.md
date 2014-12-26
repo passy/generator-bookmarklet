@@ -16,8 +16,9 @@ You can find the resulting bookmarklet in `dist/bookmarklet.js`.
 
 ## Changelog
 
-#### 0.2.2 (2014-10-XX)
+#### 1.1.0 (2014-12-27)
 
+- Bump to most recent generated dependencies
 - Update to Gulp Version 3.8
 - Removed [`gulp.run`](https://github.com/gulpjs/gulp/issues/199)
 - Replaces [gulp-clean](https://github.com/peter-vilja/gulp-clean) with [gulp-rimraf](https://github.com/robrich/gulp-rimraf)
