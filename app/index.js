@@ -1,7 +1,7 @@
 'use strict';
 
-var path = require('path');
-var yeoman = require('yeoman-generator');
+var path = require('path'),
+    yeoman = require('yeoman-generator');
 
 module.exports = yeoman.generators.Base.extend({
   constructor: function constructor() {
