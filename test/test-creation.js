@@ -1,28 +1,21 @@
 /*global describe, beforeEach, it*/
 'use strict';
 
-var path    = require('path');
+var path = require('path');
 var helpers = require('yeoman-generator').test;
+var assert = require('yeoman-generator').assert;
 
 
 describe('Bookmarklet generator', function () {
   beforeEach(function (done) {
-    helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
-      if (err) {
-        return done(err);
-      }
-
-      this.webapp = helpers.createGenerator('bookmarklet:app', [
-        '../../app'
-      ]);
-      this.webapp.options['skip-install'] = true;
-      done();
-    }.bind(this));
+    helpers.run(path.join(__dirname, '../app'))
+      .withOptions({ skipInstall: true })
+      .on('end', done);
   });
 
-  it('creates expected files', function (done) {
+  it('creates expected files', function () {
     var expected = [
-      ['package.json', /"name": "temp"/],
+      'package.json',
       '.gitignore',
       '.gitattributes',
       '.jshintrc',
@@ -30,9 +23,6 @@ describe('Bookmarklet generator', function () {
       'app/main.js'
     ];
 
-    this.webapp.run({}, function () {
-      helpers.assertFiles(expected);
-      done();
-    });
+    assert.file(expected);
   });
 });
