@@ -1,16 +1,20 @@
 'use strict';
 
 var path = require('path'),
-    yeoman = require('yeoman-generator');
+    yeoman = require('yeoman-generator'),
+    s = require('underscore.string'),
+    wiring = require('html-wiring'),
+    mkdirp = require('mkdirp');
 
 module.exports = yeoman.generators.Base.extend({
   constructor: function constructor() {
     yeoman.generators.Base.apply(this, arguments);
 
-    this.mainFile = this.readFileAsString(
+    this.slugify = s.slugify;
+    this.mainFile = wiring.readFileAsString(
       path.join(this.sourceRoot(), 'main.js'));
     this.pkg = JSON.parse(
-      this.readFileAsString(path.join(__dirname, '../package.json')));
+      wiring.readFileAsString(path.join(__dirname, '../package.json')));
     this.on('end', function () {
       if (!this.options['skip-install']) {
         this.npmInstall();
@@ -36,7 +40,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   app: function app() {
-    this.mkdir('app');
+    mkdirp('app');
     this.write('app/main.js', this.mainFile);
   }
 });
