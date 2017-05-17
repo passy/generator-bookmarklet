@@ -1,4 +1,6 @@
 # Bookmarklet Generator for Yeoman
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/passy/generator-bookmarklet.svg)](https://greenkeeper.io/)
 [![Build Status](https://secure.travis-ci.org/passy/generator-bookmarklet.png?branch=master)](https://travis-ci.org/passy/generator-bookmarklet)
 
 Scaffolds out a project to create
