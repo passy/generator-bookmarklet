@@ -22,12 +22,12 @@
     "test": "mocha --reporter spec"
   },
   "dependencies": {
-    "yeoman-generator": "^0.20.1"
+    "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
     "html-wiring": "^1.1.0",
     "mkdirp": "^0.5.0",
-    "mocha": "^2.0.1",
+    "mocha": "^3.4.1",
     "underscore.string": "^3.0.3"
   },
   "peerDependencies": {
